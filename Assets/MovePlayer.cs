@@ -28,11 +28,9 @@ public class MovePlayer : MonoBehaviour
 
     void InputCatcher()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            GetComponentInChildren<LightSpawner>().SpawnLight();
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.Q))
             x = 1;
-        else if (Input.GetKey(KeyCode.Q))
+        else if (Input.GetKey(KeyCode.D))
             x = -1;
         else
             x = 0;
