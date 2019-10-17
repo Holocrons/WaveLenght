@@ -7,6 +7,7 @@ public class MovePlayer : MonoBehaviour
 
     private float x = 0;
     public float speed = 0;
+    public GameObject lightPrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -34,5 +35,7 @@ public class MovePlayer : MonoBehaviour
             x = -1;
         else
             x = 0;
+        if (Input.GetKeyDown(KeyCode.E))
+            Instantiate(lightPrefabs, transform.position, new Quaternion(0, 0, 0, 0));
     }
 }
