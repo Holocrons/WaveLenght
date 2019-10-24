@@ -16,14 +16,15 @@ public class movingLight : MonoBehaviour
     void Start()
     {
         lightRef = GetComponent<Light>();
+        Destroy(this.gameObject, 4);
     }
 
     void Update()
     {
-        if (transform.position.z > -75)
+        if (transform.position.z > -100)
         {
             transform.Translate(direction * speed * Time.deltaTime);
-            lightRef.intensity = transform.position.z / -30;
+            lightRef.intensity = transform.position.z / -50;
             timer = Time.time + 0f;
         }
         else if (goBall == true)
