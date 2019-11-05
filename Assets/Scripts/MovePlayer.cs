@@ -30,7 +30,6 @@ public class MovePlayer : MonoBehaviour
     private void Update()
     {
         inAir = !gc.HasHit();
-        Debug.Log(inAir);
         if (playerNb == 1)
             InputCatcher();
         else if (playerNb == 2)
