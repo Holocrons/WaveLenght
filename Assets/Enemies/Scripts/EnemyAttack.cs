@@ -30,8 +30,6 @@ public class EnemyAttack : MonoBehaviour
         {
             anim.Play("Attack", 0);
             nextMeleeAttack = Time.time + meleeAttackRate;
-            // GameObject go = Instantiate(projectile, spawnPos, Quaternion.identity);
-            // go.GetComponent<Projectile>().setDirection(direction);
         }
     }
 }

@@ -37,8 +37,6 @@ public class Patrol : MonoBehaviour
     private IEnumerator PlayAnimation(string animName) {
         anim.Play(animName, 0);
         yield return new WaitForEndOfFrame();
-        Debug.Log(animName);
-        Debug.Log("current clip length = " + anim.GetCurrentAnimatorStateInfo(0).length);
         agent.isStopped = true;
         animationIsPlaying = true;
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
@@ -46,11 +44,9 @@ public class Patrol : MonoBehaviour
         agent.isStopped = false;
     }
 
-    private IEnumerator WaitForAnimation(string animName)
+    private IEnumerator WaitForAnimation()
     {
         yield return new WaitForEndOfFrame();
-        Debug.Log(animName);
-        Debug.Log("current clip length = " + anim.GetCurrentAnimatorStateInfo(0).length);
         agent.isStopped = true;
         animationIsPlaying = true;
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
@@ -69,7 +65,6 @@ public class Patrol : MonoBehaviour
     }
 
     void Update() {
-        // float distance = Vector3.Distance(myTransform.position, player.position);
         if (!animationIsPlaying) {
 
             Vector3 centerPos = myTransform.position + new Vector3(0, boxCollider.center.y, 0);
@@ -80,19 +75,18 @@ public class Patrol : MonoBehaviour
                 if (distance < attackRange)
                 {
                     agent.isStopped = true;
-                    attack.MeleeAttack(player.position - centerPos, centerPos);
-                    StartCoroutine(WaitForAnimation("Attack"));
-                    // attack.MeleeAttack(player.position - myTransform.position, myTransform.position);
-                    // Vector3 direction = player.position - centerPos;
-                    // Vector3 newRot = Vector3.RotateTowards(myTransform.forward, direction, rotStep, 0.0f);
-                    // if (myTransform.rotation == Quaternion.LookRotation(newRot))
-                    // {
-                    //     attack.MeleeAttack(player.position - centerPos, centerPos);
-                    // }
-                    // else
-                    // {
-                    //     myTransform.rotation = Quaternion.LookRotation(newRot);
-                    // }
+                    Vector3 direction = player.position - centerPos;
+                    Vector3 newRot = Vector3.RotateTowards(myTransform.forward, direction, rotStep, 0.0f);
+                    float angle = Vector3.Angle(myTransform.forward, direction);
+                    if (angle < 15)
+                    {
+                        attack.MeleeAttack(player.position - centerPos, centerPos);
+                        StartCoroutine(WaitForAnimation());
+                    }
+                    else
+                    {
+                        myTransform.rotation = Quaternion.LookRotation(newRot);
+                    }
                 }
                 else {
                     agent.isStopped = false;
@@ -101,10 +95,6 @@ public class Patrol : MonoBehaviour
             }
             else
             {
-                // if (movement.Follow()) {
-                //     agent.isStopped = true;
-                // } else {
-                // agent.isStopped = false;
                 if (!agent.pathPending && agent.remainingDistance < 0.5f)
                     GotoNextPoint();
             }

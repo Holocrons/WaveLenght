@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
     public float speed = 40;
-    public float modulo = 15;
     private Rigidbody rigidBody;
     private float x_min;
     private float x_max;
@@ -15,7 +14,6 @@ public class PlayerControl : MonoBehaviour {
     }
     void FixedUpdate() {
         KeyboardMovement();
-        // KeepWithinMinMaxRectangle();
     }
 
     private void KeyboardMovement (){
@@ -26,18 +24,12 @@ public class PlayerControl : MonoBehaviour {
         Vector3 newVelocity = new Vector3(xSpeed, ySpeed, 0);
         // Vector3 newVelocity = new Vector3(xSpeed, 0, 0);
         rigidBody.velocity = newVelocity;
-        // if (transform.position.x > modulo)
-        //     transform.position = new Vector3(transform.position.x % modulo, transform.position.y, transform.position.z);
-        // restrict player movement
-        // KeepWithinMinMaxRectangle ();
     }
 
-    // private void KeepWithinMinMaxRectangle (){
-    //     float x = transform.position.x;
-    //     float y = transform.position.y;
-    //     float z = transform.position.z;
-    //     float clampedX = Mathf.Clamp(x, x_min, x_max);
-    //     // float clampedZ = Mathf.Clamp(z, z_min, z_max);
-    //     transform.position = new Vector3(clampedX, y, z);
-    // }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy")) {
+            print("Hit");
+        }
+    }
 }

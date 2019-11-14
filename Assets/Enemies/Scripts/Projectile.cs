@@ -23,6 +23,8 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Player"))
+            print("hit");
         if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Player"))
             Destroy(gameObject);
     }
