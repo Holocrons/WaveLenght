@@ -77,7 +77,7 @@ public class Patrol : MonoBehaviour
                     agent.isStopped = true;
                     Vector3 direction = player.position - centerPos;
                     Vector3 newRot = Vector3.RotateTowards(myTransform.forward, direction, rotStep, 0.0f);
-                    float angle = Vector3.Angle(myTransform.forward, direction);
+                    float angle = Vector3.Angle(myTransform.forward, new Vector3(direction.x, 0 , 0));
                     if (angle < 15)
                     {
                         attack.MeleeAttack(player.position - centerPos, centerPos);
