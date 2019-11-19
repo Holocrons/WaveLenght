@@ -11,12 +11,15 @@ public class movingLight : MonoBehaviour
     private float timer = 0;
     private bool goBall = false;
     Vector3 scale = new Vector3(1, 1, 1);
-
+    public GameObject SpherePrefabs;
+    private GameObject SphereTmp; 
 
     void Start()
     {
         lightRef = GetComponent<Light>();
-        Destroy(this.gameObject, 4);
+        Destroy(this.gameObject, 3);
+        SphereTmp = Instantiate(SpherePrefabs, transform.position, new Quaternion(0, 0, 0, 0));
+        Destroy(SphereTmp, 3);
     }
 
     void Update()
@@ -26,6 +29,7 @@ public class movingLight : MonoBehaviour
             transform.Translate(direction * speed * Time.deltaTime);
             lightRef.intensity = transform.position.z / -50;
             timer = Time.time + 0f;
+           SphereTmp.transform.localScale = new Vector3(lightRef.intensity * 20, lightRef.intensity * 20, lightRef.intensity * 20);
         }
         else if (goBall == true)
         {

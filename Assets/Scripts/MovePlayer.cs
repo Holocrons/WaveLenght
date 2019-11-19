@@ -93,8 +93,8 @@ public class MovePlayer : MonoBehaviour
             x = 0;
         if (Input.GetKeyDown(KeyCode.E))
             Instantiate(lightPrefabs, transform.position, new Quaternion(0, 0, 0, 0));
-        if (Input.GetKeyDown(KeyCode.A))
-            Instantiate(lightPrefabs2, new Vector3(transform.position.x ,transform.position.y,-20), new Quaternion(0, 0, 0, 0));
+       /* if (Input.GetKeyDown(KeyCode.A))
+            Instantiate(lightPrefabs2, new Vector3(transform.position.x ,transform.position.y,-20), new Quaternion(0, 0, 0, 0));*/
         if (Input.GetKeyDown(KeyCode.Space) && inAir == false)
             jump = true;
     }
