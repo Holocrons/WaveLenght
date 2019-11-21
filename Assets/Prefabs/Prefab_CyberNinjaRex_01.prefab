@@ -338,7 +338,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 8.004e-42, y: 1.64e-43, z: 6e-45, w: 5.001118e+33}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -429,7 +429,8 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: -2.8727271e+23, y: 5.6986056e+24, z: 1.799741e-22,
+    w: 2.0415012e+25}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -701,7 +702,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 2.01e-41, y: 1.74e-43, z: 4e-45, w: 7.052015e+26}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2393,7 +2394,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &5402652149959650691
 CapsuleCollider:
@@ -2425,7 +2426,7 @@ MonoBehaviour:
   jumpForce: 5000
   lightPrefabs: {fileID: 129466171972767696, guid: c1f35fc2f93ec5247ad9a12656042b77,
     type: 3}
-  lightPrefabs2: {fileID: 3517332358780493746, guid: e5c4aa370f773984991cead1aadc07cf,
+  lightPrefabs2: {fileID: 5215889185947187737, guid: b012a7b28ca143f4d941d08e4d9962e2,
     type: 3}
   playerNb: 1
   animList:
@@ -2436,6 +2437,9 @@ MonoBehaviour:
   followPlayer:
   - {fileID: 0}
   - {fileID: 0}
+  LastCheckpont: {x: 0, y: 0, z: 0}
+  death: 0
+  nblight: 4
 --- !u!1 &5404256464976169458
 GameObject:
   m_ObjectHideFlags: 0
