@@ -22,6 +22,7 @@ public class MovePlayer : MonoBehaviour
     public Vector3 LastCheckpont;
     public bool death = false;
     public int nblight = 4;
+    public List<GameObject> power;
 
     void Start()
     {
@@ -33,6 +34,15 @@ public class MovePlayer : MonoBehaviour
 
     private void Update()
     {
+        int tmp = 0;
+        while (tmp != power.Count)
+        {
+            if (tmp > nblight - 1)
+                power[tmp].SetActive(false);
+            else
+                power[tmp].SetActive(true);
+            tmp++;
+        }
         inAir = !gc.HasHit();
         if (playerNb == 1)
             InputCatcher();
