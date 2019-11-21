@@ -19,6 +19,7 @@ public class Patrol : MonoBehaviour
     private float rotStep;
     private bool animationIsPlaying = false;
     private Animator anim;
+    private EnemyStat stat;
 
     void Start ()
     {
@@ -27,6 +28,7 @@ public class Patrol : MonoBehaviour
         attack = GetComponent<EnemyAttack>();
         boxCollider = GetComponent<BoxCollider>();
         anim = GetComponent<Animator>();
+        stat = GetComponent<EnemyStat>();
         myTransform = transform;
         agent.autoBraking = false;
         rotStep = rotationSpeed * Time.deltaTime;
@@ -65,7 +67,7 @@ public class Patrol : MonoBehaviour
     }
 
     void Update() {
-        if (!animationIsPlaying) {
+        if (!animationIsPlaying && !stat.deathPlaying) {
 
             Vector3 centerPos = myTransform.position + new Vector3(0, boxCollider.center.y, 0);
             float distance = Vector3.Distance(centerPos, player.position);

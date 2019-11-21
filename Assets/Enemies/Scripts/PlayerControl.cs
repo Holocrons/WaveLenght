@@ -29,6 +29,9 @@ public class PlayerControl : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) {
+            EnemyStat stat = collision.gameObject.GetComponent<EnemyStat>();
+            if (stat)
+                stat.TakeDamage(1);
             print("Hit");
         }
     }

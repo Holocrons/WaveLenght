@@ -85,7 +85,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967091602}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.04, y: 1.61, z: -0.02}
+  m_LocalPosition: {x: -0.04, y: 1.758, z: 0.053}
   m_LocalScale: {x: 0.6666668, y: 0.6666667, z: 0.6666668}
   m_Children: []
   m_Father: {fileID: 2486656309056755246}
@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 7491971568274668850}
   - component: {fileID: 7491971568274668851}
   - component: {fileID: 7491971568274668849}
+  - component: {fileID: 1551420895}
   m_Layer: 0
   m_Name: Robot Kyle 1
   m_TagString: Enemy
@@ -571,8 +572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {fileID: 289608284}
-  - {fileID: 437973618}
+  - {fileID: 0}
+  - {fileID: 0}
   player: {fileID: 0}
   range: 5
   attackRange: 3
@@ -591,6 +592,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 8623866083726484727, guid: 95889174a2e13c84da468221186ddc01,
     type: 3}
+--- !u!114 &1551420895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502295052705670205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724ace7d67719aa4b842c492ba947aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 3
+  deathPlaying: 0
 --- !u!1 &1833212313377317898
 GameObject:
   m_ObjectHideFlags: 0
