@@ -31068,27 +31068,27 @@ PrefabInstance:
     - target: {fileID: 114766471463255810, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_text
-      value: MAYBE SOME DESCRIPTION AS WELL.
+      value: This is a demonstration of our game
       objectReference: {fileID: 0}
     - target: {fileID: 114766471463255810, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 31
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 114766471463255810, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114766471463255810, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114766471463255810, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114766471463255810, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
@@ -31154,22 +31154,22 @@ PrefabInstance:
     - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_text
-      value: CONTINUE TITLE
+      value: DEMO
       objectReference: {fileID: 0}
     - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 14
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
@@ -89693,6 +89693,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
+        type: 3}
+      propertyPath: m_text
+      value: DEMO
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502243179737848, guid: edfe5669ee6a96440a4311ff508b7b4b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224156065551391314, guid: edfe5669ee6a96440a4311ff508b7b4b,
         type: 3}
