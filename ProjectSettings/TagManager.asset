@@ -9,6 +9,7 @@ TagManager:
   - pink
   - Wall
   - Enemy
+  - death
   layers:
   - Default
   - TransparentFX

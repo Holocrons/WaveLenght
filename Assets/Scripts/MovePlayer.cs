@@ -19,18 +19,21 @@ public class MovePlayer : MonoBehaviour
     public GameObject GroundCheck;
     private GroundRaycast gc;
     public List<GameObject> followPlayer;
+    public Vector3 LastCheckpont;
+    public bool death = false;
+    public int nblight = 4;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         gc = GroundCheck.GetComponent<GroundRaycast>();
+        LastCheckpont = transform.position;
     }
 
     private void Update()
     {
         inAir = !gc.HasHit();
-        Debug.Log(inAir);
         if (playerNb == 1)
             InputCatcher();
         else if (playerNb == 2)
@@ -50,6 +53,11 @@ public class MovePlayer : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 90, 0);
         else if (x == -1)
             transform.eulerAngles = new Vector3(0, -90, 0);
+        if (death == true)
+        {
+            transform.position = LastCheckpont;
+            death = false;
+        }
     }
 
     private void FixedUpdate()
@@ -91,11 +99,23 @@ public class MovePlayer : MonoBehaviour
             x = -1;
         else
             x = 0;
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && nblight > 0)
+        {
             Instantiate(lightPrefabs, transform.position, new Quaternion(0, 0, 0, 0));
-       /* if (Input.GetKeyDown(KeyCode.A))
-            Instantiate(lightPrefabs2, new Vector3(transform.position.x ,transform.position.y,-20), new Quaternion(0, 0, 0, 0));*/
+            nblight--;
+        }
+        if (Input.GetKeyDown(KeyCode.A) && nblight > 0  )
+        {
+            Instantiate(lightPrefabs2, transform.position, new Quaternion(0, 0, 0, 0));
+            nblight--;
+        }
         if (Input.GetKeyDown(KeyCode.Space) && inAir == false)
             jump = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {           
+        if (other.tag == "death")
+            death = true;
     }
 }
