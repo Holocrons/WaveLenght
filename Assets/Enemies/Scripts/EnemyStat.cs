@@ -15,7 +15,6 @@ public class EnemyStat : MonoBehaviour
     private IEnumerator PlayAnimation(string animName)
     {
         anim.Play(animName, 0);
-        deathPlaying = true;
         yield return new WaitForEndOfFrame();
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
@@ -27,6 +26,7 @@ public class EnemyStat : MonoBehaviour
 
     void Update() {
         if (healthPoints <= 0 && !deathPlaying) {
+            deathPlaying = true;
             StartCoroutine(PlayAnimation("Death"));
         }
     }

@@ -32,7 +32,6 @@ public class PlayerControl : MonoBehaviour {
             EnemyStat stat = collision.gameObject.GetComponent<EnemyStat>();
             if (stat)
                 stat.TakeDamage(1);
-            print("Hit");
         }
     }
 }

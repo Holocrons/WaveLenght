@@ -67,6 +67,9 @@ public class Patrol : MonoBehaviour
     }
 
     void Update() {
+        if (stat.deathPlaying) {
+            agent.isStopped = true;
+        }
         if (!animationIsPlaying && !stat.deathPlaying) {
 
             Vector3 centerPos = myTransform.position + new Vector3(0, boxCollider.center.y, 0);
