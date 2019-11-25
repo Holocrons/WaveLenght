@@ -6,12 +6,12 @@ public class showPlatform : MonoBehaviour
 {
     GameObject tmp = null;
     bool isctive = false;
+    public string tag;
 
     void Update()
     {
         if (tmp == null)
         {
-            Debug.Log("courge");
             isctive = false;
         }
         GetComponent<MeshRenderer>().enabled = isctive;
@@ -19,8 +19,7 @@ public class showPlatform : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("INIT");
-        if (other.tag == "blue")
+        if (other.tag == tag)
         {
             isctive = true;
             tmp = other.gameObject;
