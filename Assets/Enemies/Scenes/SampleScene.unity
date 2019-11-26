@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 958111086}
   - component: {fileID: 958111090}
   - component: {fileID: 958111091}
+  - component: {fileID: 958111092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -516,6 +517,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &958111092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958111085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941426509abedb643bc188562ca6ce3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 3
+  takeDamageRate: 2
+  lastDamageTime: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,10 +1193,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 958111089}
-    - target: {fileID: 1551420895, guid: 37f0bfb0844954f4b98daac96df3a270, type: 3}
-      propertyPath: healthPoints
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37f0bfb0844954f4b98daac96df3a270, type: 3}
 --- !u!1001 &8823412990428668918
@@ -1194,6 +1206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823412989415118308, guid: bc33dc63b3e2d634a8d099c28d46c6b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8823412989414623684, guid: bc33dc63b3e2d634a8d099c28d46c6b8,
         type: 3}

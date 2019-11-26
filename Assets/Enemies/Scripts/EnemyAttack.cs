@@ -32,4 +32,16 @@ public class EnemyAttack : MonoBehaviour
             nextMeleeAttack = Time.time + meleeAttackRate;
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealth stat = collision.gameObject.GetComponent<PlayerHealth>();
+            if (stat)
+            {
+                stat.TakeDamage(1);
+            }
+        }
+    }
 }
