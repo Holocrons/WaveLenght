@@ -33,11 +33,11 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
-            PlayerHealth stat = collision.gameObject.GetComponent<PlayerHealth>();
+            PlayerHealth stat = collider.gameObject.GetComponent<PlayerHealth>();
             if (stat)
             {
                 stat.TakeDamage(1);
