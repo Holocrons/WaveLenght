@@ -24,7 +24,8 @@ public class MovePlayer : MonoBehaviour
     public int nblight = 4;
     public List<GameObject> power;
     public GameObject deathText;
-    private float lightTimer;
+    private float lightTimer = 0;
+    private float deathTimer = 0;
 
     void Start()
     {
@@ -68,7 +69,7 @@ public class MovePlayer : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 90, 0);
         else if (x == -1)
             transform.eulerAngles = new Vector3(0, -90, 0);
-        if (death == true && Input.anyKey)
+        if (death == true && Input.anyKey && deathTimer <= Time.time)
         {
             deathText.SetActive(false);
             transform.position = LastCheckpont;
@@ -115,13 +116,15 @@ public class MovePlayer : MonoBehaviour
             x = -1;
         else
             x = 0;
-        if (Input.GetKeyDown(KeyCode.E) && nblight > 0)
+        if (Input.GetKeyDown(KeyCode.E) && nblight > 0 && lightTimer <= Time.time)
         {
+            lightTimer = Time.time + 3f;
             Instantiate(lightPrefabs, transform.position, new Quaternion(0, 0, 0, 0));
             nblight--;
         }
-        if (Input.GetKeyDown(KeyCode.A) && nblight > 0  )
+        if (Input.GetKeyDown(KeyCode.A) && nblight > 0 && lightTimer <= Time.time)
         {
+            lightTimer = Time.time + 3f;
             Instantiate(lightPrefabs2, transform.position, new Quaternion(0, 0, 0, 0));
             nblight--;
         }
@@ -131,10 +134,11 @@ public class MovePlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "death")
+        if (other.tag == "death" && death == false)
         {
             deathText.SetActive(true);
             death = true;
+            deathTimer = Time.time + 1f;
         }
     }
 }
