@@ -23,6 +23,9 @@ public class MovePlayer : MonoBehaviour
     public bool death = false;
     public int nblight = 4;
     public List<GameObject> power;
+    public GameObject deathText;
+    private float lightTimer = 0;
+    private float deathTimer = 0;
 
     void Start()
     {
@@ -56,15 +59,19 @@ public class MovePlayer : MonoBehaviour
             anim.runtimeAnimatorController = animList[1];
         foreach (GameObject obj in followPlayer)
         {
-            Vector3 newPos = new Vector3(transform.position.x, transform.position.y, obj.transform.position.z);
-            obj.transform.position = newPos;
+            if (death == false)
+            {
+                Vector3 newPos = new Vector3(transform.position.x, transform.position.y, obj.transform.position.z);
+                obj.transform.position = newPos;
+            }
         }
         if (x == 1)
             transform.eulerAngles = new Vector3(0, 90, 0);
         else if (x == -1)
             transform.eulerAngles = new Vector3(0, -90, 0);
-        if (death == true)
+        if (death == true && Input.anyKey && deathTimer <= Time.time)
         {
+            deathText.SetActive(false);
             transform.position = LastCheckpont;
             death = false;
         }
@@ -109,13 +116,15 @@ public class MovePlayer : MonoBehaviour
             x = -1;
         else
             x = 0;
-        if (Input.GetKeyDown(KeyCode.E) && nblight > 0)
+        if (Input.GetKeyDown(KeyCode.E) && nblight > 0 && lightTimer <= Time.time)
         {
+            lightTimer = Time.time + 3f;
             Instantiate(lightPrefabs, transform.position, new Quaternion(0, 0, 0, 0));
             nblight--;
         }
-        if (Input.GetKeyDown(KeyCode.A) && nblight > 0  )
+        if (Input.GetKeyDown(KeyCode.A) && nblight > 0 && lightTimer <= Time.time)
         {
+            lightTimer = Time.time + 3f;
             Instantiate(lightPrefabs2, transform.position, new Quaternion(0, 0, 0, 0));
             nblight--;
         }
@@ -124,8 +133,12 @@ public class MovePlayer : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {           
-        if (other.tag == "death")
+    {
+        if (other.tag == "death" && death == false)
+        {
+            deathText.SetActive(true);
             death = true;
+            deathTimer = Time.time + 1f;
+        }
     }
 }
