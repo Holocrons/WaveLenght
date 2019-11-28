@@ -23,6 +23,8 @@ public class MovePlayer : MonoBehaviour
     public bool death = false;
     public int nblight = 4;
     public List<GameObject> power;
+    public GameObject deathText;
+    private float lightTimer;
 
     void Start()
     {
@@ -56,15 +58,19 @@ public class MovePlayer : MonoBehaviour
             anim.runtimeAnimatorController = animList[1];
         foreach (GameObject obj in followPlayer)
         {
-            Vector3 newPos = new Vector3(transform.position.x, transform.position.y, obj.transform.position.z);
-            obj.transform.position = newPos;
+            if (death == false)
+            {
+                Vector3 newPos = new Vector3(transform.position.x, transform.position.y, obj.transform.position.z);
+                obj.transform.position = newPos;
+            }
         }
         if (x == 1)
             transform.eulerAngles = new Vector3(0, 90, 0);
         else if (x == -1)
             transform.eulerAngles = new Vector3(0, -90, 0);
-        if (death == true)
+        if (death == true && Input.anyKey)
         {
+            deathText.SetActive(false);
             transform.position = LastCheckpont;
             death = false;
         }
@@ -124,8 +130,11 @@ public class MovePlayer : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {           
+    {
         if (other.tag == "death")
+        {
+            deathText.SetActive(true);
             death = true;
+        }
     }
 }
