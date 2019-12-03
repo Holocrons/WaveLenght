@@ -1039,6 +1039,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: prefMelee
       objectReference: {fileID: 0}
+    - target: {fileID: 5449192201659357324, guid: 8be512c7d9ae02c4eafbef198badefbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5446220480295355024, guid: 8be512c7d9ae02c4eafbef198badefbd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1109,6 +1114,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 958111089}
+    - target: {fileID: 5448202067992697157, guid: 8be512c7d9ae02c4eafbef198badefbd,
+        type: 3}
+      propertyPath: hasDeathAnim
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be512c7d9ae02c4eafbef198badefbd, type: 3}
 --- !u!1001 &7491971566691691550
@@ -1122,6 +1132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Robot Kyle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502295052705670205, guid: 37f0bfb0844954f4b98daac96df3a270,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2486656309056755246, guid: 37f0bfb0844954f4b98daac96df3a270,
         type: 3}
@@ -1193,6 +1208,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 958111089}
+    - target: {fileID: 1551420895, guid: 37f0bfb0844954f4b98daac96df3a270, type: 3}
+      propertyPath: hasDeathAnim
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37f0bfb0844954f4b98daac96df3a270, type: 3}
 --- !u!1001 &8823412990428668918
@@ -1210,7 +1229,7 @@ PrefabInstance:
     - target: {fileID: 8823412989415118308, guid: bc33dc63b3e2d634a8d099c28d46c6b8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8823412989414623684, guid: bc33dc63b3e2d634a8d099c28d46c6b8,
         type: 3}
@@ -1274,3 +1293,26 @@ PrefabInstance:
       objectReference: {fileID: 958111089}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc33dc63b3e2d634a8d099c28d46c6b8, type: 3}
+--- !u!1 &8823412990428668919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8823412989415118308, guid: bc33dc63b3e2d634a8d099c28d46c6b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8823412990428668918}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8823412990428668920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823412990428668919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724ace7d67719aa4b842c492ba947aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 1
+  deathPlaying: 0
+  hasDeathAnim: 0
+  explosion: {fileID: 3450432134559118445, guid: 963e889072852c3468e9423fdb764108,
+    type: 3}

@@ -1027,6 +1027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 3
   deathPlaying: 0
+  hasDeathAnim: 1
 --- !u!54 &848938025
 Rigidbody:
   m_ObjectHideFlags: 0
