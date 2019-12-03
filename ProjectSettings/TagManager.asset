@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - blue
+  - pink
+  - Wall
+  - Enemy
+  - death
   layers:
   - Default
   - TransparentFX
@@ -17,7 +22,7 @@ TagManager:
   - PostProcessing
   - blue
   - player
-  - 
+  - ui
   - 
   - 
   - 
