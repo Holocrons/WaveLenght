@@ -21,6 +21,8 @@ public class LoadSave : MonoBehaviour {
             System.IO.File.WriteAllLines(Application.dataPath + "/Resources/save.txt", tmp1);
         }
         System.IO.StreamReader file = new System.IO.StreamReader (Application.dataPath + "/Resources/save.txt"); //load text file with data
+        string line;
+        int saveLevel;
         while ((line = file.ReadLine ()) != null) { //while text exists.. repeat           
             saveLevel = System.Convert.ToInt32(line);
         }
