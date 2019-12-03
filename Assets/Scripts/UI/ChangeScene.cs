@@ -25,15 +25,19 @@ public class ChangeScene : MonoBehaviour
         {
             case 1:
                 SceneManager.LoadScene("SampleScene");
+                staticField.actualLvl = 1;
                 break;
             case 2:
                 SceneManager.LoadScene("test1");
+                staticField.actualLvl = 2;
                 break;
             case 3:
                 SceneManager.LoadScene("test2");
+                staticField.actualLvl = 3;
                 break;
             case 4:
                 SceneManager.LoadScene("test3");
+                staticField.actualLvl = 4;
                 break;
             default:
                 break;

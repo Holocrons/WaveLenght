@@ -5,6 +5,7 @@ using UnityEngine;
 public class staticField : MonoBehaviour
 {
     static public int scenenbr = 1;
+    static public int actualLvl = 0;
     // Start is called before the first frame update
     void Start()
     {
