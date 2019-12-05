@@ -44,4 +44,11 @@ public class EnemyStat : MonoBehaviour
                 Explode();
         }
     }
+
+    void OnTriggerEnter(Collider collider) {
+        if (collider.transform.CompareTag("shoot")) {
+            TakeDamage(1);
+            Destroy(collider.gameObject);
+        }
+    }
 }
