@@ -26,6 +26,7 @@ public class MovePlayer : MonoBehaviour
     public GameObject deathText;
     private float lightTimer = 0;
     private float deathTimer = 0;
+    public GameObject pew;
 
     void Start()
     {
@@ -108,6 +109,15 @@ public class MovePlayer : MonoBehaviour
             jump = true;
     }
 
+    void Attack()
+    {
+        Vector3 v = followPlayer[0].GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);    //ScreenPointToPosition(Input.mousePosition);
+        v.z = transform.position.z;
+        Vector3 vec = new Vector3(v.x - transform.position.x, v.y - transform.position.y, 0);
+        GameObject s = Instantiate(pew, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0,0,0,0));
+        s.GetComponent<Shoot>().dir = vec;  
+    }
+
     void InputCatcher()
     {
         if (Input.GetKey(KeyCode.D))
@@ -116,6 +126,8 @@ public class MovePlayer : MonoBehaviour
             x = -1;
         else
             x = 0;
+        if (Input.GetMouseButtonDown(0) && death == false)
+            Attack();
         if (Input.GetKeyDown(KeyCode.E) && nblight > 0 && lightTimer <= Time.time)
         {
             lightTimer = Time.time + 3f;
