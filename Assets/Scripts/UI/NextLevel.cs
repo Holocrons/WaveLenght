@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class NextLevel : MonoBehaviour {
@@ -21,6 +22,8 @@ public class NextLevel : MonoBehaviour {
             return;
         }
         System.IO.StreamReader file = new System.IO.StreamReader (Application.dataPath + "/Resources/save.txt"); //load text file with data
+        string line;
+        int saveLevel = 0;
         while ((line = file.ReadLine ()) != null) { //while text exists.. repeat           
             saveLevel = System.Convert.ToInt32 (line);
         }
