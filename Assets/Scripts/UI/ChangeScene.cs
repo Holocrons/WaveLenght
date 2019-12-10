@@ -21,6 +21,7 @@ public class ChangeScene : MonoBehaviour
         launchscene(staticField.scenenbr);
     }
     public void launchscene(int scene) {
+        Time.timeScale = 1f;
         switch (scene)
         {
             case 1:
@@ -39,8 +40,40 @@ public class ChangeScene : MonoBehaviour
                 SceneManager.LoadScene("test3");
                 staticField.actualLvl = 4;
                 break;
+            case 5:
+                SceneManager.LoadScene("MainMenu");
+                staticField.actualLvl = 0;
+                break;
             default:
                 break;
         }
+    }
+    public void btnEndLevel() {
+        Debug.Log(staticField.actualLvl);
+        Time.timeScale = 1f;
+
+        switch (staticField.actualLvl)
+        {
+            case 1:
+                SceneManager.LoadScene("test1");
+                staticField.actualLvl++;
+            break;
+            case 2:
+                SceneManager.LoadScene("test2");
+                staticField.actualLvl++;
+            break;
+            case 3:
+                SceneManager.LoadScene("test3");
+                staticField.actualLvl++;
+            break;
+            case 4:
+                SceneManager.LoadScene("MainMenu");
+                staticField.actualLvl++;
+            break;
+        }
+    }
+
+    public void exitGame() {
+        Application.Quit();
     }
 }

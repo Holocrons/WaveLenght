@@ -33,7 +33,7 @@ public class Pause  : MonoBehaviour
         Time.timeScale = 1f;
         canvas.SetActive(false);
         paused = false;
-        SceneManager.LoadScene("MenuPause");
+        SceneManager.LoadScene("MainMenu");
     }
     bool togglePause()
      {

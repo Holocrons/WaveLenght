@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour {
     public GameObject endCanvas;
+    public GameObject NextLevelCanvas;
     // Start is called before the first frame update
     void Start () {
 
@@ -15,11 +17,21 @@ public class NextLevel : MonoBehaviour {
 
     }
 
+    private void OnTriggerEnter(Collider other) {
+        LoadNextLevel();
+    }
+
     public void LoadNextLevel () {
         int lvl = staticField.actualLvl;
         if (lvl >= 4) { // si on est au dernier niveau alors on affiche le canvas de fin de jeu
             endCanvas.SetActive (true);
+        Time.timeScale = 0f;
+
             return;
+        } else {
+            NextLevelCanvas.SetActive(true);
+        Time.timeScale = 0f;
+
         }
         System.IO.StreamReader file = new System.IO.StreamReader (Application.dataPath + "/Resources/save.txt"); //load text file with data
         string line;
@@ -32,7 +44,8 @@ public class NextLevel : MonoBehaviour {
             using (StreamWriter writer = new StreamWriter (Application.dataPath + "/Resources/save.txt", false)) {
                 writer.Write ((lvl + 1).ToString ());
             }
-        }
-
+        }        
     }
+
+    
 }
