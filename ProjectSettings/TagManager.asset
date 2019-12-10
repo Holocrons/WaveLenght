@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Enemy
   - death
+  - shoot
   layers:
   - Default
   - TransparentFX
