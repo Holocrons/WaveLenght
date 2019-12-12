@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
             if (healthPoints <= 0)
             {
                 if (move)
-                    move.enabled = false;
+                    move.DeathHandler();
             }
         }
     }

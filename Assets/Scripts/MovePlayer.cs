@@ -148,9 +148,14 @@ public class MovePlayer : MonoBehaviour
     {
         if (other.tag == "death" && death == false)
         {
-            deathText.SetActive(true);
-            death = true;
-            deathTimer = Time.time + 1f;
+            DeathHandler();
         }
+    }
+
+    public void DeathHandler()
+    {
+        deathText.SetActive(true);
+        death = true;
+        deathTimer = Time.time + 1f;
     }
 }
