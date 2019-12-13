@@ -5,7 +5,7 @@ using UnityEngine;
 public class Parallaxing : MonoBehaviour
 {
     
-    public GameObject background;
+//    public GameObject background;
     private Transform[] backgrounds;
     private float[] parallaxScales;
     public float smoothing = 1f;
@@ -15,7 +15,7 @@ public class Parallaxing : MonoBehaviour
     
     void Start()
     {
-        backgrounds = background.GetComponentsInChildren<Transform>();
+        backgrounds = transform.GetComponentsInChildren<Transform>();
         
         previousCamPos = cam.position;
         parallaxScales = new float[backgrounds.Length];
