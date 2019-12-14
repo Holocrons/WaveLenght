@@ -76,6 +76,7 @@ public class MovePlayer : MonoBehaviour
             deathText.SetActive(false);
             transform.position = LastCheckpont;
             death = false;
+            rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
         }
     }
 
@@ -159,5 +160,6 @@ public class MovePlayer : MonoBehaviour
         deathText.SetActive(true);
         death = true;
         deathTimer = Time.time + 1f;
+        rb.constraints = RigidbodyConstraints.FreezePosition;
     }
 }

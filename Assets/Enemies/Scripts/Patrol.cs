@@ -70,6 +70,12 @@ public class Patrol : MonoBehaviour
         if (stat.deathPlaying) {
             agent.isStopped = true;
             boxCollider.enabled = false;
+            var collidersObj = gameObject.GetComponentsInChildren<Collider>();
+            for (var index = 0; index < collidersObj.Length; index++)
+            {
+                var colliderItem = collidersObj[index];
+                colliderItem.enabled = false;
+            }
         }
         if (!animationIsPlaying && !stat.deathPlaying) {
 

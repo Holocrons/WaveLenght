@@ -452,11 +452,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502295052705670205}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5894731, y: 1.8227711, z: 0.35752308}
-  m_Center: {x: -0.016466547, y: 0.8965076, z: 0.0072488785}
+  m_Size: {x: 1.3136319, y: 1.8227711, z: 0.35752308}
+  m_Center: {x: -0.05023575, y: 0.8965076, z: 0.007248878}
 --- !u!95 &7491971568274668847
 Animator:
   serializedVersion: 3
@@ -562,7 +562,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &1833212313377317898
 GameObject:
   m_ObjectHideFlags: 0

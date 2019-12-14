@@ -45,10 +45,10 @@ public class EnemyStat : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider collider) {
-        if (collider.transform.CompareTag("shoot")) {
-            TakeDamage(1);
-            Destroy(collider.gameObject);
-        }
-    }
+    // void OnTriggerEnter(Collider collider) {
+    //     if (collider.transform.CompareTag("shoot")) {
+    //         TakeDamage(1);
+    //         Destroy(collider.gameObject);
+    //     }
+    // }
 }
