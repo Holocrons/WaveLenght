@@ -455,8 +455,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36326078, y: 1.8227711, z: 0.35752308}
-  m_Center: {x: -0.0047146776, y: 0.8965076, z: 0.007248878}
+  m_Size: {x: 0.5894731, y: 1.8227711, z: 0.35752308}
+  m_Center: {x: -0.016466547, y: 0.8965076, z: 0.0072488785}
 --- !u!95 &7491971568274668847
 Animator:
   serializedVersion: 3
@@ -546,6 +546,7 @@ MonoBehaviour:
   healthPoints: 2
   deathPlaying: 0
   hasDeathAnim: 1
+  explosion: {fileID: 0}
 --- !u!54 &429672569
 Rigidbody:
   m_ObjectHideFlags: 0

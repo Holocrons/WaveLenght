@@ -69,6 +69,7 @@ public class Patrol : MonoBehaviour
     void Update() {
         if (stat.deathPlaying) {
             agent.isStopped = true;
+            boxCollider.enabled = false;
         }
         if (!animationIsPlaying && !stat.deathPlaying) {
 

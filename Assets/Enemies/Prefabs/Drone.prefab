@@ -126,8 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   player: {fileID: 0}
-  range: 8
-  attackRange: 5
+  range: 12
+  attackRange: 8
   rotationSpeed: 3
 --- !u!114 &5360293191097866491
 MonoBehaviour:
