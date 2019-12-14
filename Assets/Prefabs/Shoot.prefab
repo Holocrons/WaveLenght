@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 8684050234674857590}
   m_Layer: 0
   m_Name: Shoot
-  m_TagString: Untagged
+  m_TagString: shoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,5 +197,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bd0a7fb4e0fe14db0400369fee9e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dir: {x: 1, y: 0, z: 0}
+  dir: {x: 0, y: 0, z: 1}
   speed: 10

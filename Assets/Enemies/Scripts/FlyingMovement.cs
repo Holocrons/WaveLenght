@@ -14,6 +14,8 @@ public class FlyingMovement : MonoBehaviour
     public float rotationSpeed = 0.2f;
     private EnemyAttack attack;
     private Vector3 initialPos;
+    private Vector3 playerCenterPos;
+    private CapsuleCollider playerCollider;
     private float rotStep;
     private float moveStep;
 
@@ -24,6 +26,7 @@ public class FlyingMovement : MonoBehaviour
         initialPos = myTransform.position;
         moveStep = speed * Time.deltaTime;
         rotStep = rotationSpeed * Time.deltaTime;
+        playerCollider = player.GetComponent<CapsuleCollider>();
     }
     void FixedUpdate() {
         AIMovement();
@@ -42,10 +45,14 @@ public class FlyingMovement : MonoBehaviour
     }
 
     private void AIMovement () {
-        float distance = Vector3.Distance(myTransform.position, player.position);
+        if (player)
+        {
+            playerCenterPos = player.position + new Vector3(0, playerCollider.center.y, 0);
+        }
+        float distance = Vector3.Distance(myTransform.position, playerCenterPos);
         int playerDirection = (int)(player.position.x - myTransform.position.x);
         if (distance <= range) {
-            Vector3 direction = player.position - myTransform.position;
+            Vector3 direction = playerCenterPos - myTransform.position;
             RaycastHit hit;
             bool hasHit = Physics.Raycast(myTransform.position, direction, out hit, 100);
             if (hasHit) {
@@ -55,9 +62,9 @@ public class FlyingMovement : MonoBehaviour
                     // myTransform.rotation = Quaternion.LookRotation(newRot);
                     Debug.DrawRay(transform.position, direction * hit.distance, Color.red);
                     if (distance > attackRange) {
-                        myTransform.position = Vector3.MoveTowards(myTransform.position, player.position, moveStep);
+                        myTransform.position = Vector3.MoveTowards(myTransform.position, playerCenterPos, moveStep);
                     } else
-                        attack.Fire(player.position - myTransform.position, myTransform.position);
+                        attack.Fire(playerCenterPos - myTransform.position, myTransform.position);
                 }
                 else {
                     Debug.DrawRay(transform.position, direction * 50, Color.blue);

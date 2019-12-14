@@ -31,7 +31,8 @@ public class PlayerHealth : MonoBehaviour
             healthPoints -= damage;
             if (healthPoints <= 0)
             {
-                move.enabled = false;
+                if (move)
+                    move.DeathHandler();
             }
         }
     }
