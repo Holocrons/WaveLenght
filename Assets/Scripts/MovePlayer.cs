@@ -80,6 +80,11 @@ public class MovePlayer : MonoBehaviour
         }
     }
 
+    public Vector3 GetGcHit()
+    {
+        return (gc.GetRayHit());
+    }
+
     private void FixedUpdate()
     {
         MovementManager();
