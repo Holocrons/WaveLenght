@@ -44,6 +44,10 @@ public class ChangeScene : MonoBehaviour
                 SceneManager.LoadScene("MainMenu");
                 staticField.actualLvl = 0;
                 break;
+            case 6:
+                SceneManager.LoadScene("MainMenu2");
+                staticField.actualLvl = 0;
+                break;
             default:
                 break;
         }

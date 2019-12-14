@@ -18,7 +18,9 @@ public class NextLevel : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "Player") {
         LoadNextLevel();
+        }
     }
 
     public void LoadNextLevel () {
