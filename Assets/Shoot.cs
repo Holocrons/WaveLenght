@@ -19,4 +19,15 @@ public class Shoot : MonoBehaviour
         transform.Translate(dir * Time.deltaTime * speed);
         
     }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.transform.CompareTag("Enemy"))
+        {
+            EnemyStat stat = collider.transform.gameObject.GetComponent<EnemyStat>();
+            if (stat)
+                stat.TakeDamage(1);
+            Destroy(gameObject);
+        }
+    }
 }
