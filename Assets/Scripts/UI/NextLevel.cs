@@ -18,12 +18,14 @@ public class NextLevel : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "Player") {
         LoadNextLevel();
+        }
     }
 
     public void LoadNextLevel () {
         int lvl = staticField.actualLvl;
-        if (lvl >= 4) { // si on est au dernier niveau alors on affiche le canvas de fin de jeu
+        if (lvl >= 3) { // si on est au dernier niveau alors on affiche le canvas de fin de jeu
             endCanvas.SetActive (true);
         Time.timeScale = 0f;
 
